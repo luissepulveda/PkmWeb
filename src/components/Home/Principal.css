@@ -1,0 +1,19 @@
+.containerHome{
+    display: flex;
+    justify-content: center;
+}
+
+.Principal{
+    position: absolute;
+    top: 50%;
+}
+
+.stadistics{
+    text-transform: uppercase;
+}
+
+.tablaContent{
+    border-style: groove;
+    border-width: 2px;
+    text-transform: capitalize;
+}

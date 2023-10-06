@@ -1,0 +1,10 @@
+
+.buscadorContainer{
+    justify-content: center;
+    display: flex;
+}
+
+.divContainer{
+    position: absolute;
+    top: 50%;
+}

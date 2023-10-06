@@ -1,0 +1,17 @@
+
+a:link, a:visited, a:active{
+    text-decoration: none;
+    color: black;
+}
+
+
+.containerNavbar{
+    border-style: groove;
+    font-size: larger;
+    font-family: 'AR One Sans', sans-serif;
+}
+
+.tableNavbar{
+    width: 100%;
+}
+
