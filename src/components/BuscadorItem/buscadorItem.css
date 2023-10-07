@@ -1,5 +1,8 @@
 
-.buscadorContainer{
+
+
+
+.itemContainer{
     justify-content: center;
     display: flex;
 }
@@ -9,6 +12,6 @@
     top: 50%;
 }
 
-.tablePkmn{
-    text-transform: capitalize;
+.itemTable{
+    text-transform:capitalize;
 }

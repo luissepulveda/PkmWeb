@@ -3,6 +3,7 @@ import './App.css';
 import Principal from "./components/Home/Principal";
 import Navbars from "./components/navbar/Navbar";
 import { Buscador } from "./components/BuscadorPokemon/Buscador";
+import { BuscadorItem } from "./components/BuscadorItem/buscadorItem";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Principal />} />
               <Route path="/Buscador" element={<Buscador />}></Route>
+              <Route path="/Items" element={<BuscadorItem />}></Route>
             </Routes>
           </BrowserRouter>
         </div>
