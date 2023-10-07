@@ -1,27 +1,55 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Buscador.css"
 import Container from 'react-bootstrap/esm/Container'
-import { FetchData } from '../controllerComponent/dataFetch'
+import { buscarButton } from './BuscadorController'
 
 export const Buscador = () => {
-    const { data } = FetchData('https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random() * 1018))
-    console.log(data?.sprites?.front_default)
+
+    const [actualData, setActualData] = useState({})
+
+    const buscarPokemon = async () => {
+        const dataPokemon = await buscarButton()
+        setActualData(dataPokemon)
+    }
+
+    useEffect(() => {
+
+
+    }, [actualData])
 
     return (
-
         <Container className='buscadorContainer'>
             <div className='divContainer'>
-                <table>
+                <table className='tablePkmn'>
                     <tr>
                         <th>
-                            <img src={data?.sprites?.front_default} />
+                            {actualData?.name}
                         </th>
                         <th>
-                            <input type='text'></input>
-                            <input type='button' value={'Buscar'}></input>
+
                         </th>
                     </tr>
+                    <tr>
+                        <td>
+                            <img src={actualData?.sprites?.front_default} width={200} sizes='200'></img>
+                        </td>
+                        {actualData?.stats?.map((pkmnData) => (
+                            <tr>
+                                <td>
+                                    {pkmnData?.stat?.name}
+                                </td>
+                                <td>
+                                    {pkmnData?.base_stat}
+                                </td>
+                            </tr>
+                        ))}
+                    </tr>
                 </table>
+                <div>
+                    <input type='text' id='inputBuscar' className='inputTxt'></input>
+                    <button onClick={buscarPokemon} className='searchButton'>Buscar</button>
+                </div>
+                    <sub>Search with Pokemon name or ID Pokedex</sub>
             </div>
         </Container>
     )
